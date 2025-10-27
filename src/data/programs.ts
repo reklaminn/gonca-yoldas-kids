@@ -1,3 +1,7 @@
+import programBabyImage from "@/assets/program-baby.jpg";
+import programToddlerImage from "@/assets/program-toddler.jpg";
+import programOnlineImage from "@/assets/program-online.jpg";
+
 export interface Program {
   id: string;
   slug: string;
@@ -19,7 +23,7 @@ export const programs: Program[] = [
     title: "Bebeğimle Evde İngilizce",
     description: "0-2 yaş arası bebekler için ebeveyn-çocuk İngilizce edinim programı. Oyun ve günlük rutinlerle doğal dil gelişimi.",
     ageRange: "0-2 Yaş",
-    image: "/src/assets/program-baby.jpg",
+    image: programBabyImage,
     fullDescription: "Bebeklik dönemi, dil edinimi için en kritik dönemdir. Bu program, ebeveynlere bebeklerinin günlük rutinlerinde nasıl doğal bir şekilde İngilizce kullanabileceklerini öğretir. Bilimsel araştırmalara dayalı yöntemlerle, bebeğinizin hem Türkçe hem de İngilizce'yi anadili olarak edinmesini sağlayabilirsiniz.",
     benefits: [
       "Bebeğiniz iki dilde de anadil seviyesinde yetkinlik kazanır",
@@ -47,7 +51,7 @@ export const programs: Program[] = [
     title: "Çocuğumla Evde İngilizce",
     description: "2-5 yaş çocuklar için ebeveyn destekli İngilizce programı. Oyun, kitap okuma ve günlük aktivitelerle dil gelişimi.",
     ageRange: "2-5 Yaş",
-    image: "/src/assets/program-toddler.jpg",
+    image: programToddlerImage,
     fullDescription: "Okul öncesi dönem, dil öğreniminde 'altın çağ' olarak bilinir. Bu program, ebeveynlere çocuklarıyla evde kaliteli İngilizce dil girdisi sağlama konusunda rehberlik eder. Hikaye kitapları, oyunlar ve günlük aktivitelerle çocuğunuz İngilizce'yi doğal bir şekilde edinir.",
     benefits: [
       "Doğal dil edinimi süreçleri desteklenir",
@@ -75,7 +79,7 @@ export const programs: Program[] = [
     title: "Çocuklar için Online İngilizce",
     description: "5-10 yaş çocuklar için interaktif online İngilizce dersleri. Küçük gruplarla eğlenceli ve etkili öğrenme.",
     ageRange: "5-10 Yaş",
-    image: "/src/assets/program-online.jpg",
+    image: programOnlineImage,
     fullDescription: "İlkokul çağındaki çocuklar için tasarlanmış, eğlenceli ve interaktif online İngilizce dersleri. Küçük grup dersleri ile her çocuğa özel ilgi gösterilir. Oyun, şarkı, hikaye ve projeler ile çocuklar İngilizce'yi severek öğrenir.",
     benefits: [
       "Yaş grubuna özel müfredat",
