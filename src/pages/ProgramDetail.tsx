@@ -1,7 +1,6 @@
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import LeadForm from "@/components/LeadForm";
 import { programs } from "@/data/programs";
 import { Button } from "@/components/ui/button";
 import {
@@ -10,19 +9,20 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { Check } from "lucide-react";
+import { Check, Clock, Tag } from "lucide-react";
 import NotFound from "./NotFound";
 
 const ProgramDetail = () => {
   const { slug } = useParams();
+  const navigate = useNavigate();
   const program = programs.find((p) => p.slug === slug);
 
   if (!program) {
     return <NotFound />;
   }
 
-  const scrollToForm = () => {
-    document.getElementById("lead-form")?.scrollIntoView({ behavior: "smooth" });
+  const handleRegister = () => {
+    navigate(`/kayit/${slug}`);
   };
 
   return (
@@ -54,15 +54,33 @@ const ProgramDetail = () => {
         <section className="py-12">
           <div className="container mx-auto px-4 max-w-4xl">
             <div className="space-y-12">
-              {/* About */}
-              <div className="space-y-4 animate-fade-in">
-                <h2 className="font-heading text-3xl font-bold">Program Hakkında</h2>
-                <p className="text-lg text-muted-foreground leading-relaxed">
-                  {program.fullDescription}
-                </p>
-                <Button onClick={scrollToForm} size="lg" className="rounded-xl">
-                  Bilgi Al
-                </Button>
+              {/* About & Price */}
+              <div className="space-y-6 animate-fade-in">
+                <div className="grid md:grid-cols-3 gap-6">
+                  <div className="md:col-span-2 space-y-4">
+                    <h2 className="font-heading text-3xl font-bold">Program Hakkında</h2>
+                    <p className="text-lg text-muted-foreground leading-relaxed">
+                      {program.fullDescription}
+                    </p>
+                  </div>
+                  <div className="bg-card p-6 rounded-2xl border shadow-lg h-fit">
+                    <div className="space-y-4">
+                      <div className="flex items-center gap-2 text-muted-foreground">
+                        <Clock className="h-5 w-5" />
+                        <span>{program.duration}</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <Tag className="h-5 w-5 text-primary" />
+                        <span className="text-3xl font-bold text-foreground">
+                          {program.price.toLocaleString('tr-TR')} ₺
+                        </span>
+                      </div>
+                      <Button onClick={handleRegister} size="lg" className="w-full rounded-xl">
+                        Kayıt Ol
+                      </Button>
+                    </div>
+                  </div>
+                </div>
               </div>
 
               {/* Benefits */}
@@ -100,15 +118,6 @@ const ProgramDetail = () => {
                 </Accordion>
               </div>
 
-              {/* Lead Form */}
-              <div id="lead-form" className="space-y-6 animate-fade-in">
-                <h2 className="font-heading text-3xl font-bold text-center">
-                  Hemen Başlayın
-                </h2>
-                <div className="bg-card p-8 rounded-2xl shadow-lg border">
-                  <LeadForm programId={program.id} />
-                </div>
-              </div>
             </div>
           </div>
         </section>

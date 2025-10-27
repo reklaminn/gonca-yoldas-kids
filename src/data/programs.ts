@@ -8,6 +8,8 @@ export interface Program {
   fullDescription: string;
   benefits: string[];
   faqs: { question: string; answer: string }[];
+  price: number;
+  duration: string;
 }
 
 export const programs: Program[] = [
@@ -36,6 +38,8 @@ export const programs: Program[] = [
         answer: "Günlük rutinlerinize entegre olduğu için ekstra zaman ayırmanıza gerek yok. Bezini değiştirirken, oynarken, yemek yerken İngilizce kullanmanız yeterli.",
       },
     ],
+    price: 2500,
+    duration: "8 Hafta",
   },
   {
     id: "2",
@@ -62,6 +66,8 @@ export const programs: Program[] = [
         answer: "Temel olarak İngilizce çocuk kitapları, basit oyuncaklar ve günlük eşyalar yeterli. Program içinde tüm kaynaklar önerilir.",
       },
     ],
+    price: 3000,
+    duration: "10 Hafta",
   },
   {
     id: "3",
@@ -88,5 +94,7 @@ export const programs: Program[] = [
         answer: "Maksimum 6 öğrencilik gruplar oluşturuyoruz. Böylece her çocuğa yeterli konuşma fırsatı ve öğretmen ilgisi sağlanır.",
       },
     ],
+    price: 3500,
+    duration: "12 Hafta",
   },
 ];
