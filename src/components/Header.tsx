@@ -9,12 +9,10 @@ const Header = () => {
   const navLinks = [
     { to: "/", label: "Anasayfa" },
     { to: "/programlar", label: "Programlar" },
-    { to: "/platform", label: "Platform" },
     { to: "/blog", label: "Blog" },
     { to: "/hakkimda", label: "Hakkımda" },
     { to: "/danismanlik", label: "Danışmanlık" },
     { to: "/iletisim", label: "İletişim" },
-    { to: "/giris", label: "Giriş" },
   ];
 
   return (

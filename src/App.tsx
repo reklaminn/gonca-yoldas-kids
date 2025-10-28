@@ -14,9 +14,6 @@ import Consulting from "./pages/Consulting";
 import Contact from "./pages/Contact";
 import Legal from "./pages/Legal";
 import NotFound from "./pages/NotFound";
-import Auth from "./pages/Auth";
-import Dashboard from "./pages/Dashboard";
-import LearningPlatform from "./pages/LearningPlatform";
 
 const queryClient = new QueryClient();
 
@@ -36,9 +33,6 @@ const App = () => (
           <Route path="/hakkimda" element={<About />} />
           <Route path="/danismanlik" element={<Consulting />} />
           <Route path="/iletisim" element={<Contact />} />
-          <Route path="/platform" element={<LearningPlatform />} />
-          <Route path="/giris" element={<Auth />} />
-          <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/yasal/:slug" element={<Legal />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
